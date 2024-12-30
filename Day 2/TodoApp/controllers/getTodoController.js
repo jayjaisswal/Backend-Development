@@ -1,5 +1,5 @@
 // import model
-const Todo = require("../models/Todo");
+const Todo = require("../models/todoModel");
 
 // define Route handler
 
@@ -44,13 +44,12 @@ exports.getTodoById = async (req, res) => {
         message: "No Data Found with given ID",
       });
     }
-      // If the database contains a document with _id: id, the todo variable will hold that document.
-      res.status(200).json({
-        success: true,
-        data: todo,
-        message: `Todo ${id} data successfully fetched`,
-      });
-    
+    // If the database contains a document with _id: id, the todo variable will hold that document.
+    res.status(200).json({
+      success: true,
+      data: todo,
+      message: `Todo ${id} data successfully fetched`,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({

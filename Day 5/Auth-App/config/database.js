@@ -3,7 +3,7 @@ require("dotenv").config();
 
 exports.dbConnect = () => {
   mongoose
-    .connect(process.env.MONGODB_URL, {
+    .connect(process.env.DATABASE_URL, {
     //   useNewUrlParser: true, useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
     //   useUnifiedTopology: true,
     })

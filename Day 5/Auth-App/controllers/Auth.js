@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
+const JWT = require("jsonwebtoken");
 
 // signup route handler
 
@@ -46,4 +47,43 @@ exports.signup = async (req, res) => {
       messsage: "User has not been registered , please try again later!",
     });
   }
+};
+
+// login
+exports.login = async (req, res) => {
+  try {
+    //  fetch data
+    const { email, password } = req.body;
+
+    // validation on email and password
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "User fill the details carefully",
+      });
+    }
+
+    // check for registered user
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.signup(401).json({
+        success: false,
+        message: "user is not registered",
+      });
+    }
+
+    // verify password & generate a JWT token
+    if (await bcrypt.compare(password, user.password)) {
+      // password match
+       
+
+
+    } else {
+      // password do not match
+      return res.status(403).json({
+        success: false,
+        message: "Password Incorrect",
+      });
+    }
+  } catch (err) {}
 };

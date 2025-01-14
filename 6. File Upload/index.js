@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 
 // middleware addition
 app.use(express.json());
-const fileupload = require(express - fileupload);
+const fileupload = require("express-fileupload");
 app.use(fileupload());
 
 // DB connect
@@ -21,7 +21,7 @@ cloudinary.cloudinaryConnect();
 
 // Api route mount
 const Upload = require("./routes/FileUpload");
-app.use("api/v1/upload", Upload);
+app.use("/api/v1/upload", Upload);
 
 // activate server
 app.listen(PORT, () => {

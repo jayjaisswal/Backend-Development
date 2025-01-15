@@ -92,7 +92,7 @@ exports.imageUpload = async (req, res) => {
   }
 };
 
-// videoupload handler
+// videoupload handler..............................................................................................................
 
 function isFileTypeSupported(type, supportedType) {
   return supportedType.includes(type); // The .includes() method is used to determine if a given value exists in an array.
@@ -154,7 +154,7 @@ exports.videoupload = async (req, res) => {
   }
 };
 
-// imageReducer handler
+// imageReducer handler..................................................................................................................
 
 function isFileTypeSupported(type, supportedType) {
   return supportedType.includes(type); // The .includes() method is used to determine if a given value exists in an array.

@@ -14,10 +14,10 @@ app.use(bodyParser.json());
 
 // activate the server on 3000 port
 app.listen(3000, () => {
-  console.log("Server Started at port no. 3000");
+  console.log("Server Started at port no. 3000");  
 });
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => {        
   res.send("hello jee, kaise ho");
 });
 

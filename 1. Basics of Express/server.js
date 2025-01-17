@@ -14,14 +14,14 @@ app.use(bodyParser.json());
 
 // activate the server on 3000 port
 app.listen(3000, () => {
-  console.log("Server Started at port no. 3000");  
+  console.log("Server Started at port no. 3000");
 });
 
-app.get("/", (req, res) => {        
+app.get("/", (req, res) => {
   res.send("hello jee, kaise ho");
 });
 
-// Post method hai jo client request krega server se
+// Post method hai jo client request krega server se(using postman)
 app.post("/car/ka/route", (request, response) => {
   const { name, brand } = request.body;
   console.log(name);

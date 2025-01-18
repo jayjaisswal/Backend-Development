@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+
 // import controller
 const { createTodo } = require("../controllers/createTodoController"); 
 
@@ -17,4 +18,8 @@ router.get("/getTodosbyid", getTodoById);// http://localhost:3000/api/v1/getTodo
 router.put("/updateTodos/:id", updateTodo);// http://localhost:3000/api/v1/updateTodos/676e69033ce3190306514aea
 router.delete("/deleteTodos/:id", deleteTodo); //http://localhost:3000/api/v1/deleteTodos/676fa7752dd9970be8588dc8
 
+router.get("/", (req, res) => { // http://localhost:3000/api/v1
+    res.send("All Todos");
+  });
+  
 module.exports = router;

@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-// load congif from env file
+// load config from env file
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
@@ -27,3 +27,4 @@ dbConnect();
 app.get("/", (req, res) => {
   res.send(`<h1> This is HOMEPGE baby </h1>`);
 });
+

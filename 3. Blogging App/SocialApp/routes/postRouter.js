@@ -15,8 +15,4 @@ router.get("/posts", getAllPosts); //http://localhost:3000/api/v1/posts
 router.post("/like/post", likePost); //http://localhost:3000/api/v1/like/post
 router.post("/unlike/post", unlikePost); //http://localhost:3000/api/v1/unlike/post
 
-// export
-
-// Example route
-
 module.exports = router;

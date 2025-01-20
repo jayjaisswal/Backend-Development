@@ -22,7 +22,7 @@ exports.createComment = async (req, res) => {
     // save the new comment into the database
     const savedComment = await comment.save();
 
-    // find the post by Id, add the new comment ti its comments array
+    // find the post by Id, add the new comment to its comments array
     // updatedPost <--iss me {new: true}--> ishke karan updated wali document aayegi jisme comments: array me ye id savedComment._id hogi
     // {new: true} nhi likhne se purane wali hii document reh jati
     // $push --> use to update

@@ -1,5 +1,6 @@
 const Post = require("../models/postModel");
 
+// create Post route handler .................................................................................
 exports.createPost = async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -13,19 +14,20 @@ exports.createPost = async (req, res) => {
       post: savedPost,
     });
   } catch (error) {
-    console.error("Error creating Post:", error.message);
+    console.error("Error while creating Post:", error.message);
     return res.status(500).json({
       error: "Error while creating Post",
     });
   }
 };
 
+// getAllPosts route handler...................................................................................................
 exports.getAllPosts = async (req, res) => {
   try {
     const posts = await Post.find().populate("comments").populate("likes");
     return res.status(200).json({
-        Posts :posts,
-      });
+      Posts: posts,
+    });
   } catch (error) {
     console.error("Error while geting Post:", error.message);
     return res.status(500).json({

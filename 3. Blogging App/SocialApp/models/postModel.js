@@ -13,14 +13,14 @@ const postSchema = new mongoose.Schema({
   },
   likes: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Like",
+      type: mongoose.Schema.Types.ObjectId, // Stores the unique ID of a "Like".
+      ref: "Like", // Refers to the "Like" model to fetch like details.
     },
   ],
   comments: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "comment",
+      type: mongoose.Schema.Types.ObjectId, // Stores the unique ID of a "comment".
+      ref: "comment",  // Refers to the "comment" model to fetch comment details.
     },
   ],
 });

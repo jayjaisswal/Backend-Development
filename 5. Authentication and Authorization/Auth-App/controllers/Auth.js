@@ -3,7 +3,7 @@ const User = require("../models/user");
 const JWT = require("jsonwebtoken");
 require("dotenv").config();
 
-// signup route handler
+// signup route handler...............................................................
 
 exports.signup = async (req, res) => {
   try {
@@ -50,7 +50,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-// login
+// login................................................................................................
 exports.login = async (req, res) => {
   try {
     //  fetch data
